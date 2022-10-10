@@ -8,7 +8,7 @@ function Hero(){
         <div className={styles.image}>
             <Image src="/images/site/hero.jpg" alt="An image showing Luan" width={330} height={360} layout="responsive" />
         </div>
-        <h1>Hi, I'm Luan</h1>
+        <h1>Hi, I&apos;m Luan</h1>
         <p>I study NextJs on Udemy</p>
     </section>
 }

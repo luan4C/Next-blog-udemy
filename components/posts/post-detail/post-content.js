@@ -2,9 +2,12 @@
 import PostHeader from "./post-header";
 import styles from './post-content.module.css';
 import ReactMarkdown from "react-markdown"; // THIS THING IS AMAZING
-import { Prism } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { PrismLight} from 'react-syntax-highlighter';
+import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark'
+import js from 'react-syntax-highlighter/dist/cjs/languages/prism/javascript'
 import Image from "next/image";
+
+PrismLight.registerLanguage('js',js)
 
 function PostContent({post}){
 
@@ -25,7 +28,7 @@ function PostContent({post}){
         },
         code(code){
             const {className, children} = code
-            return <Prism language={className.split('-')[1]} children={children} style={atomDark} />
+            return <PrismLight language={className.split('-')[1]} children={children} style={atomDark} />
         }
     }
 
